@@ -6,7 +6,7 @@ var dateFormat = require('dateformat');
 var con = mysql.createConnection({
         host: "localhost",
         user: "root",
-        password: "",
+        password: "gasgasgas",
         database: "kmutnb_running"
     });
 
@@ -15,6 +15,23 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
+//////////// users_events ////////////
+app.get('/name/select', function(req, res) {
+    var tag = req.params.Tagdata;
+    var sql = "SELECT * FROM users_events";
+    con.query(sql, function(err, result) {
+        if (!err && res.statusCode == 200) {
+            res.status(200);
+            res.json(result);
+        } else {
+            throw err
+            res.status(404);
+        }
+        console.log(res.statusCode,res.statusMessage)
+    });
+});
+
+//////////// users_events_tag ////////////
 app.post('/insert', function(req, res) {
     var id = req.body.event_id;
     var run_no = req.body.running_no;

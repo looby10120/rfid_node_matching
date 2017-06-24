@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/Nithichai/rfid_node_matching/issues"
   },
-  "homepage": "https://github.com/Nithichai/rfid_node_matching#readme"
+  "homepage": "https://github.com/Nithichai/rfid_node_matching#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dateformat": "^2.0.0",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {}
 }
