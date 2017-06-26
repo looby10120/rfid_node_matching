@@ -1,0 +1,26 @@
+{
+  "name": "rfid_node_matching",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app_match.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithichai/rfid_node_matching.git"
+  },
+  "author": "Mosza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nithichai/rfid_node_matching/issues"
+  },
+  "homepage": "https://github.com/Nithichai/rfid_node_matching#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dateformat": "^2.0.0",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {}
+}
