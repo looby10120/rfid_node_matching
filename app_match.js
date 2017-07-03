@@ -14,9 +14,14 @@ var con = mysql.createConnection({
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+
+app.get('/check_connect', function(req, res) {
+    res.send();
+});
     
-app.get('/select_run', function(req, res) {
+app.post('/select_run', function(req, res) {
     var running_no = req.body.txt_running_no;
+    console.log(running_no)
     if(running_no == undefined){
         res.status(404)
         res.send("Error")
@@ -120,13 +125,13 @@ app.delete('/delete', function(req, res) {
     }
 });
 
-app.get('/select', function(req, res) {
+app.post('/select_event', function(req, res) {
     var running_no = req.body.txt_running_no;
     if(running_no == undefined){
         res.status(404)
         res.send("Error") 
     }else{
-    var sql = "SELECT running_no, Tagdata FROM users_events_tag WHERE running_no='"+ running_no + "'";
+    var sql = "SELECT * FROM events";
     con.query(sql, function(err, result) {
         if (!err && res.statusCode == 200) {
             res.status(200);
